@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pythonproject7"
+version = "0.1.0"
+description = ""
+authors = ["Katerina Kurochkina <katifedr@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.lint.dependencies]
+black = "^24.4.2"
+mypy = "^1.11.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.1"
+flake8 = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
