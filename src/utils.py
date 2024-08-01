@@ -4,7 +4,8 @@ from ast import Str
 from typing import Dict
 
 
-from src.main import Category, Product
+from src.product import Product
+from src.сategory import Category
 
 
 def read_json(path: Str) -> Dict:
