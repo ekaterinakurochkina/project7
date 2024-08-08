@@ -1,6 +1,7 @@
 from src.product import Product
 from src.сategory import Category
 
+
 # if __name__ == "__main__":
 #     product1 = Product(
 #         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
@@ -67,9 +68,9 @@ if __name__ == "__main__":
 
     print(category1.products)
     product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
-    # category1.add_product(product4)
-    # print(category1.products)
-    # print(category1.product_count)
+    category1.add_product(product4)
+    print(category1.products)
+    print(category1.product_count)
 
     new_product = Product.new_product(
         {

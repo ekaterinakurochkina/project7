@@ -19,6 +19,10 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
+    def add_product(self, new_product: Product):
+        self.__products.append(new_product)
+        # self.product_count +=1
+
     # Геттер, который выводит список товаров в виде строк в формате:
     # Название продукта, 80 руб. Остаток: 15 шт
     @property
@@ -29,12 +33,12 @@ class Category:
             self.product_count += 1
         return products_str
 
-    # Геттер и сеттер для добавления нового товара
-    @property
-    def add_product(self, new_product: Product) -> Product:
-        return self.product
-
-    @add_product.setter
-    def add_product(self, new_product: Product):
-        self.__products.append(self, new_product)
-        Category.product_count += 1
+    # # Геттер и сеттер для добавления нового товара -  почему-то в таком виде код не работает
+    # @property
+    # def add_product(self, new_product: Product) -> Product:
+    #     return self.__products
+    #
+    # @add_product.setter
+    # def add_product(self, new_product: Product):
+    #     self.__products.append(self, new_product)
+    #     Category.product_count += 1
