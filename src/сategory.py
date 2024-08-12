@@ -26,12 +26,12 @@ class Category:
             product_count += product.quantity
         return f"{self.name}, количество продуктов: {product_count} шт.\n"
 
-    def __add__(self, other):
-        """Метод суммирования товаров в заданной категории"""
-        category_count = 0
-        for product in self.__products:
-            category_count += product.quantity
-        return f"{self.name}, количество продуктов: {category_count} шт.\n"
+    # def __add__(self, other):
+    #     """Метод суммирования товаров в заданной категории"""
+    #     category_count = 0
+    #     for product in self.__products:
+    #         category_count += product.quantity
+    #     return f"{self.name}, количество товаров в категории: {category_count} шт.\n"
 
     def add_product(self, new_product: Product):
         self.__products.append(new_product)

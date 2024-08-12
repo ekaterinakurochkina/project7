@@ -32,3 +32,8 @@ def category_toys():
 @pytest.fixture()
 def product_cheese():
     return Product("cheese", "Гауда", 600.00, 150)
+
+
+@pytest.fixture()
+def product_milk():
+    return Product("milk", "Первый вкус", 100.00, 300)

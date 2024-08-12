@@ -22,7 +22,7 @@ class Product:
 
     def __add__(self, other):
         """Метод, позволяющий рассчитать стоимость продуктов, имеющихся на складе"""
-        return f" Стоимость товаров {self.name} и {other.name}, имеющихся на складе, составляет: {self.quantity * self.__price + other.quantity * self.__price}"
+        return f"Стоимость товаров {self.name} и {other.name}, имеющихся на складе, составляет: {self.quantity * self.__price + other.quantity * self.__price}"
 
     # метод добавления объекта класса из словаря
     @classmethod

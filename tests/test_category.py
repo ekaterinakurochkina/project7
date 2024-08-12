@@ -26,3 +26,7 @@ def test_products_property(category_food):
 # тестирование сеттера
 def test_products_setter(category_food):
     assert len(category_food.products) == 108
+
+
+def test_category_add(category_food):
+    assert str(category_food) == "Food, количество продуктов: 470 шт.\n"
