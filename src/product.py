@@ -16,9 +16,13 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
-
     def __str__(self):
+        """Метод преобразования данных о классе в строку"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        """Метод, позволяющий рассчитать стоимость продуктов, имеющихся на складе"""
+        return f" Стоимость товаров {self.name} и {other.name}, имеющихся на складе, составляет: {self.quantity * self.__price + other.quantity * self.__price}"
 
     # метод добавления объекта класса из словаря
     @classmethod
