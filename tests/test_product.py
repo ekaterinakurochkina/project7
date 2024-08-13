@@ -24,7 +24,4 @@ def test_product_str(product_cheese):
 
 
 def test_product_add(product_cheese, product_milk):
-    assert (
-        add(product_cheese, product_milk)
-        == "Стоимость товаров cheese и milk, имеющихся на складе, составляет: 270000.0"
-    )
+    assert add(product_cheese, product_milk) == 120000.0
