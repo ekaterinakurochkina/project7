@@ -1,5 +1,7 @@
 from src.product import Product
 from src.сategory import Category
+from src.Smartphone import Smartphone
+from src.LawnGrass import LawnGrass
 
 if __name__ == "__main__":           # 16.1
     smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
