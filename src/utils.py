@@ -5,7 +5,7 @@ from typing import Dict
 
 
 from src.product import Product
-from src.сategory import Category
+from src.category import Category
 
 
 def read_json(path: Str) -> Dict:

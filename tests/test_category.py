@@ -1,5 +1,5 @@
 import pytest
-from src.сategory import Category
+from src.category import Category
 from src.product import Product
 
 
