@@ -26,34 +26,27 @@ class Category:
             product_count += product.quantity
         return f"{self.name}, количество продуктов: {product_count} шт.\n"
 
-    # def __add__(self, other):
-    #     """Метод суммирования товаров в заданной категории"""
-    #     category_count = 0
-    #     for product in self.__products:
-    #         category_count += product.quantity
-    #     return f"{self.name}, количество товаров в категории: {category_count} шт.\n"
+
+    def __add__(self, other):  # 16.1
+        """Метод суммирования товаров в заданной категории"""
+        if isinstance(other, Product):
+            return (self.__price * self.quantity) + (other.__price * other.quantity)
+        raise TypeError
 
     def add_product(self, new_product: Product):
-        self.__products.append(new_product)
+        if issubclass(type(new_product), Product) == True and isinstance(
+            new_product, Product
+        ):
+            self.__products.append(new_product)
         # self.product_count +=1
+        else:
+            raise TypeError
 
-    # Геттер, который выводит список товаров в виде строк в формате:
-    # Название продукта, 80 руб. Остаток: 15 шт
+    # Геттер, который выводит список товаров:
     @property
     def products(self):
         products_str = ""
         for product in self.__products:
-            # products_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт. \n"
             products_str += f"{str(product)}\n"
             self.product_count += 1
         return products_str
-
-    # # Геттер и сеттер для добавления нового товара -  почему-то в таком виде код не работает
-    # @property
-    # def add_product(self, new_product: Product) -> Product:
-    #     return self.__products
-    #
-    # @add_product.setter
-    # def add_product(self, new_product: Product):
-    #     self.__products.append(self, new_product)
-    #     Category.product_count += 1
