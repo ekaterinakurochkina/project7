@@ -22,12 +22,9 @@ class Product:
 
     def __add__(self, other):
         """Метод, позволяющий рассчитать стоимость продуктов, имеющихся на складе"""
-        if type(self) == type(other):
-            return self.quantity * self.__price + other.quantity * other.__price
-        else:
-            raise TypeError
-        # метод добавления объекта класса из словаря
+        return self.quantity * self.__price + other.quantity * other.__price
 
+    # метод добавления объекта класса из словаря
     @classmethod
     def new_product(cls, dict_product: dict):
         return cls(
