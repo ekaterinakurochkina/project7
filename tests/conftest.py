@@ -73,4 +73,7 @@ def product_toy():
     return Product("ball", "Мяч надувной", 300.00, 80)
 
 
+@pytest.fixture()
+def new_product():
+    return {"name":"coffe", "description":"Арабика", "price":1800.00, "quantity":20}
 

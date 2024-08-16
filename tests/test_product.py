@@ -14,7 +14,7 @@ def test_product_init(product_cheese):
 
 
 def test_product_str(product_cheese):
-    assert str(product_cheese) == "cheese, 600.0 руб. Остаток: 150 шт."
+    assert str(product_cheese) == "Product(cheese, Гауда, 600.0, 150)"
 
 
 def test_product_add(product_cheese, product_milk):

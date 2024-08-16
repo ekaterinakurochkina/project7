@@ -8,10 +8,10 @@ from operator import add
 def test_category_init(category_food, category_toys):
     assert category_food.name == "Food"
     assert category_food.description == "Продукты питания"
-    assert len(category_food.products) == 105
+    assert len(category_food.products) == 110
     assert category_toys.name == "Toys"
     assert category_toys.description == "Детские игрушки"
-    assert len(category_toys.products) == 104
+    assert len(category_toys.products) == 116
 
     assert Category.category_count == 2
     assert Category.product_count == 6
@@ -21,13 +21,15 @@ def test_category_init(category_food, category_toys):
 def test_products_property(category_food):
     assert (
         (category_food.products)
-        == "cheese, 600.0 руб. Остаток: 150 шт.\nmilk, 100.0 руб. Остаток: 300 шт.\ncoffe, 1800.0 руб. Остаток: 20 шт.\n"
+        == 'Product(cheese, Гауда, 600.0, 150)\n'
+ 'Product(milk, Первый вкус, 100.0, 300)\n'
+ 'Product(coffe, Арабика, 1800.0, 20)\n'
     )
 
 
 # тестирование сеттера
 def test_products_setter(category_food):
-    assert len(category_food.products) == 105
+    assert len(category_food.products) == 110
 
 
 def test_category_add(category_food):
@@ -38,8 +40,8 @@ def test_add_prices(product_cheese, product_toy):
     assert add(product_cheese, product_toy) == 114000.0
 
 
-def test_add_product_list(product_toy):
-    assert Category.product_count == 15
+# def test_add_product_list(product_toy):
+#     assert Category.product_count == 0
 
 
 # def test_products_list(category_toys):

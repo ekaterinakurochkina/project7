@@ -9,3 +9,7 @@ class LawnGrass(Product):
         self.country = country
         self.germination_period = germination_period
         self.color = color
+
+    @classmethod
+    def new_product(cls, name, description, price, quantity, country, germination_period, color):
+        return print(cls(name, description, price, quantity, country, germination_period, color))

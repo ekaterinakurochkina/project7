@@ -9,6 +9,7 @@ if __name__ == '__main__':     # 16.2
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
     # print(Smartphone.__mro__)
+    # print(Product.new_product("ball", "Мяч надувной", 300.00, 80))
     print(product1.name)
     print(product1.description)
     print(product1.price)

@@ -18,9 +18,9 @@ class Product(BaseProduct, PrintMixin):
         self.quantity = quantity
         super().__init__(name, description, price, quantity)
 
-    def __str__(self):
-        """Метод преобразования данных о классе в строку"""
-        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+    # def __str__(self):
+    #     """Метод преобразования данных о классе в строку"""
+    #     return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
         """Метод, позволяющий рассчитать стоимость продуктов, имеющихся на складе"""
@@ -28,13 +28,18 @@ class Product(BaseProduct, PrintMixin):
 
     # метод добавления объекта класса из словаря
     @classmethod
-    def new_product(cls, dict_product: dict):
+    def new_product_from_dict(cls, dict_product: dict):
         return cls(
             name=dict_product.get("name"),
             description=dict_product.get("description"),
             price=dict_product.get("price"),
             quantity=dict_product.get("quantity"),
         )
+
+    @classmethod
+    def new_product(cls, name, description, price, quantity):
+        return print(cls(name, description, price, quantity))
+
 
     # Для класса Product опишите геттеры и сеттеры
     @property
