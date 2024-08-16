@@ -1,7 +1,8 @@
 from typing import Any
+from src.BaseProduct import BaseProduct
+from src.print_mixin import PrintMixin
 
-
-class Product:
+class Product(BaseProduct, PrintMixin):
     """Класс для представления продукта"""
 
     name: str
@@ -15,6 +16,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__(name, description, price, quantity)
 
     def __str__(self):
         """Метод преобразования данных о классе в строку"""
