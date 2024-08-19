@@ -14,6 +14,10 @@ class Product:
         self.name = name
         self.description = description
         self.__price = price
+        if quantity >= 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.quantity = quantity
 
     def __str__(self):
