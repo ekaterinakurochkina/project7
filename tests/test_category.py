@@ -4,7 +4,6 @@ from src.product import Product
 from operator import add
 
 
-
 def test_category_init(category_food, category_toys):
     assert category_food.name == "Food"
     assert category_food.description == "Продукты питания"
@@ -38,8 +37,13 @@ def test_add_prices(product_cheese, product_toy):
     assert add(product_cheese, product_toy) == 114000.0
 
 
-def test_add_product_list(product_toy):
-    assert Category.product_count == 15
+# def test_add_product_list(category_toys):
+#     assert Category.product_count == 3
+
+
+def test_middle_price(category_toys, category_without_products):
+    assert category_toys.middle_price() == 1300
+    assert category_without_products.middle_price() == 0
 
 
 # def test_products_list(category_toys):

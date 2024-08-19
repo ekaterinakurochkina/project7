@@ -26,7 +26,6 @@ class Category:
             product_count += product.quantity
         return f"{self.name}, количество продуктов: {product_count} шт.\n"
 
-
     def __add__(self, other):  # 16.1
         """Метод суммирования товаров в заданной категории"""
         if isinstance(other, Product):
@@ -41,14 +40,15 @@ class Category:
         # self.product_count +=1
         else:
             raise TypeError
+
     def middle_price(self):
         """Метод нахождения средней цены товаров"""
         try:
-            return sum([product.price for product in self.__products])/len(self.__products)
+            return sum([product.price for product in self.__products]) / len(
+                self.__products
+            )
         except ZeroDivisionError:
             return 0
-
-
 
     # Геттер, который выводит список товаров:
     @property
